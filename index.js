@@ -26,8 +26,12 @@ function getNames(users) {
 console.log(getNames(users));
 
 function getSkills(users) {
-  return users
-    .sort((a, b) => a.skills - b.skills) 
-    .map(user => user.skills)
+  const formatSkills = [];
+  for (const user of users) {
+    for (const skill of user.skills) {
+      if (formatSkills.indexOf(skill) === -1) formatSkills.push(skill);
+    }
+  }
+  return formatSkills.sort((a, b) => a.localeCompare(b));
 }
-console.log(getSkills(users)); 
+console.log(getSkills(users));
