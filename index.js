@@ -13,8 +13,9 @@ console.log(getBalance(users));
 
 function getFriend(users) {
   return users
-    .filter(user => user.friends.includes('Телик'))  
-    .map(user => user.name);  
+    .filter(user => user.friends.includes('Телик'))
+    .map(user => user.name)
+    .sort();
 }
 console.log(getFriend(users));
 
